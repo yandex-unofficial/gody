@@ -26,6 +26,7 @@
     "dev": "npm run dev:prepare && nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "prepare": "husky",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
@@ -37,6 +38,9 @@
     "defu": "^6.1.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^9.1.6",
     "@nuxt/eslint-config": "^1.9.0",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.1.1",
