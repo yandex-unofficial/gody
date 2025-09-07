@@ -1,0 +1,31 @@
+# Source files (only include built files)
+src/
+tests/
+playground/
+docs/
+
+# Development files
+.gitignore
+.npmignore
+tsconfig.json
+*.md
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Dependencies
+node_modules/
+
+# Build cache
+.nuxt/
+.output/
+.nitro/

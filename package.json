@@ -1,0 +1,85 @@
+{
+  "name": "nuxt-varioqub",
+  "version": "0.1.0",
+  "description": "Nuxt module for easy integration with Varioqub",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "npm run dev:prepare && nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^4.1.1",
+    "defu": "^6.1.4"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^1.9.0",
+    "@nuxt/module-builder": "^1.0.2",
+    "@nuxt/schema": "^4.1.1",
+    "@nuxt/test-utils": "^3.19.2",
+    "@types/node": "^24.3.1",
+    "changelogen": "^0.6.2",
+    "eslint": "^9.35.0",
+    "nuxt": "^4.1.1",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.0.6"
+  },
+  "peerDependencies": {
+    "nuxt": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zadigetvoltaire/nuxt-gtm.git"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt3",
+    "module",
+    "nuxt-module",
+    "gtm",
+    "google tag manager",
+    "googletagmanager",
+    "open-source"
+  ],
+  "author": {
+    "name": "Yandex Unofficial 🔦",
+    "url": "https://github.com/yandex-unofficial"
+  },
+  "contributors": [
+    {
+      "name": "Alexander Buzmakov",
+      "url": "https://github.com/dongaber",
+      "email": "boozy044@gmail.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/yandex-unofficial/nuxt-varioqub/issues"
+  },
+  "homepage": "https://github.com/yandex-unofficial/nuxt-varioqub#readme",
+  "license": "MIT"
+}
